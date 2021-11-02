@@ -1,0 +1,68 @@
+@startuml web_de_ventas
+class Persona{
+    +string:nombre
+    +string:apellido
+    +int:DNI
+    +date:fecha_nacimiento
+
+}
+class Administrador{
+    +string:eliminar_remover_agregarProductos()
+    +string:responder_preguntas()
+    +string:eliminar_reseñas()
+    +string:calcelar_compra()
+}
+
+class Usuario{
+    +string:domicilio
+    +string:contraseña
+    +string:gmail
+    +int:numero_telefono
+
+    +string:comprar_producto()
+    +string:dejar_una_reseña()
+    +int:pagar_producto()
+    +string:cancelar_compra()
+
+}
+
+class Publicaciones{
+    +int:id_producto
+    +int:precio
+    +string:descripcion
+    +string:stock
+    +string:categoria
+    +imagen
+    +string:envio
+    +string:medio_de_pago
+    +string:caracteristicas
+    +string:garantia
+
+    +string:publicar()
+    +string:RMV()
+}
+
+class Pagos{
+    +int:importe
+    +int:id_usuario
+    
+    +:cancelar_compra()
+    +:Registor_de_compra()
+}
+
+class Registro_de_compra{
+
+    +list:guardar_informacion_db()
+}
+
+Administrador --> Persona
+Usuario --> Persona
+Administrador "1"--"1:*" Publicaciones
+Usuario "1"--"1:*" Registro_de_compra
+(Usuario, Registro_de_compra) .. Pagos
+Registro_de_compra "1".."1:*" Publicaciones
+
+
+
+
+@enduml
