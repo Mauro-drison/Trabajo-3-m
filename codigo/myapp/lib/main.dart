@@ -1,56 +1,68 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  return runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+          title: const Text('Dicee'),
+          backgroundColor: Colors.red,
+        ),
+        body: const DicePage(),
+      ),
+    ),
+  );
+}
 
-class MyApp extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  const DicePage({Key? key}) : super(key: key);
+
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  var random = Random();
+
+  var leftDiceNumber = 1;
+
+  var rightDiceNumber = 1;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Material App Bar'),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.add),
-                onPressed: _add,
-              ),
-              IconButton(
-                icon: Icon(Icons.remove),
-                onPressed: () {},
-              )
-            ],
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: TextButton(
+              child: Image(image: AssetImage("images/dice$leftDiceNumber.png")),
+              onPressed: () {
+                setState(() {
+                  leftDiceNumber = random.nextInt(5) + 1;
+                  print("Button 1 pressed: value $leftDiceNumber");
+                });
+              },
+            ),
+            flex: 1,
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Container(
-                color: Colors.orange,
-                height: 100,
-                width: 100,
-              ),
-              Text("perro"),
-              Icon(Icons.add),
-              Image.network(
-                "https://laverdadnoticias.com/__export/1601667940437/sites/laverdad/img/2020/10/02/mikasa_ackerman_attack_on_titan.jpeg_554688468.jpeg",
-                height: 90,
-              ),
-            ],
+          Expanded(
+            child: TextButton(
+              child:
+                  Image(image: AssetImage("images/dice$rightDiceNumber.png")),
+              onPressed: () {
+                setState(() {
+                  rightDiceNumber = random.nextInt(5) + 1;
+                  print("Button 2 pressed: value $rightDiceNumber");
+                });
+              },
+            ),
+            flex: 1,
           ),
-          drawer: Drawer(),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              print("perro");
-            },
-          ),
-          backgroundColor: Colors.white),
+        ],
+      ),
     );
-  }
-
-  void _add() {
-    print("hola mundo");
   }
 }
