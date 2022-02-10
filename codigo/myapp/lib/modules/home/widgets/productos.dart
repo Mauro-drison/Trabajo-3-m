@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/listaProductos.dart';
+import 'package:myapp/modules/home/listaProductos.dart';
 
 class Productos extends StatelessWidget {
   @override

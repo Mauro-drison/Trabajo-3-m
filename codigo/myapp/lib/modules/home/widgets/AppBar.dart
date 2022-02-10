@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myapp/routes/app_pages.dart';
 
 class Barra_izquierda extends StatelessWidget {
   const Barra_izquierda({
@@ -20,11 +22,11 @@ class Barra_izquierda extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.account_circle_rounded,
-                  size: 70,
                 ),
                 onPressed: () {
-                  print("object");
+                  Get.toNamed(AppRoutes.REGISTRARSE);
                 },
+                iconSize: 70.0,
               ),
             ],
           ),
@@ -36,8 +38,7 @@ class Barra_izquierda extends StatelessWidget {
             style: TextStyle(),
           ),
           onTap: () {
-            // Update the state of the app.
-            // ...
+            Get.toNamed(AppRoutes.CARRITO_COMPRAS);
           },
         ),
         ListTile(

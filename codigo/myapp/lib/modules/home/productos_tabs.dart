@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProductosTabs extends StatelessWidget {
-  const ProductosTabs(this.address, this.name);
+//  const ProductosTabs(this.address, this.name);
 
-  final String address;
-  final String name;
+  //final String address;
+  //final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +28,15 @@ class ProductosTabs extends StatelessWidget {
                     //borde circular de 20
                     borderRadius: BorderRadius.circular(20.0),
                     image: DecorationImage(
-                        image: NetworkImage(address), fit: BoxFit.cover)),
+                        image: NetworkImage(
+                            "https://icdn.dtcn.com/image/digitaltrends_es/huawei-p30-pro-review-6v2-720x480.jpg"),
+                        fit: BoxFit.cover)),
               ),
               SizedBox(
                 height: 15.0,
               ),
               Text(
-                name,
+                "texto",
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),
               ),
               SizedBox(

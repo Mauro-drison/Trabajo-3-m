@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/layout.dart';
+import 'package:get/get.dart';
+import 'package:myapp/modules/home/bindings.dart';
+import 'package:myapp/modules/home/home.dart';
+import 'package:myapp/routes/app_pages.dart';
+import 'package:myapp/routes/app_routes.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
+    //ruta inicial
+    initialRoute: AppRoutes.INITIAL,
+    //enruptamiento de la navegacion
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MAURO',
-      debugShowCheckedModeBanner: false,
-      home: MyHomePagepri(),
-    );
-  }
+    //le decimos que el home tiene tiene vinculado un vinculador
+    //                           pagina               bindig
+    defaultTransition: Transition.rightToLeftWithFade,
+    getPages: AppPages.pages,
+    home: Home(),
+    initialBinding: PageBinding(),
+  ));
 }

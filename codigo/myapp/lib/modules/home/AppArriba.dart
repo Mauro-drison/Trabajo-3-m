@@ -19,7 +19,7 @@ class AppArriba extends StatelessWidget {
                 width: 3.0,
               ),
               Text(
-                "Aplicacion de pruebas",
+                "En esta parte ira la ubicacion",
                 style: TextStyle(fontSize: 18),
               ),
             ],
@@ -34,7 +34,7 @@ class AppArriba extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.0),
                 //color
                 border: Border.all(color: Colors.grey, width: 2.0)),
-            child: Icon(Icons.shopping_basket),
+            child: Icon(Icons.phone_iphone),
           )
         ],
       ),

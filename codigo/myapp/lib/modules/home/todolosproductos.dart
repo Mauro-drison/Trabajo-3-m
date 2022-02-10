@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListaProductos extends StatelessWidget {
-  const ListaProductos(this.title, this.no, this.assetimage);
+class TodoLosProductos extends StatelessWidget {
+  const TodoLosProductos(this.title, this.no, this.assetimage);
 
   final String title;
   final String no;
@@ -16,8 +16,8 @@ class ListaProductos extends StatelessWidget {
           //a la derecha 20 pixeles
           EdgeInsets.only(right: 20.0),
       child: Container(
-        height: 170.0,
-        width: width / 3.3,
+        height: 250.0,
+        width: width / 2.4,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             color: Color.fromRGBO(255, 248, 230, 1)),
@@ -34,10 +34,10 @@ class ListaProductos extends StatelessWidget {
             SizedBox(
               height: 5.0,
             ),
-            Text(
-              "$no restaurantes",
-              style: TextStyle(color: Colors.grey),
-            ),
+            //Text(
+            //  "$no restaurantes",
+            //  style: TextStyle(color: Colors.grey),
+            //),
             SizedBox(
               height: 10.0,
             ),
@@ -45,6 +45,23 @@ class ListaProductos extends StatelessWidget {
               image: AssetImage(assetimage),
               height: 80.0,
               width: 80.0,
+            ),
+            ElevatedButton(
+              child: Text("comprar"),
+              onPressed: () {
+                print("conprado");
+              },
+            ),
+            ElevatedButton(
+              child: Text(
+                "cancelar",
+              ),
+              onPressed: () {
+                print("cancelar");
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+              ),
             )
           ],
         ),
