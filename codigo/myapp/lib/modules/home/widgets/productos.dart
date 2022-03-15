@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/modules/home/listaProductos.dart';
 
-class Productos extends StatelessWidget {
+class Filtro_Productos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

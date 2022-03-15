@@ -48,8 +48,8 @@ class ListaProductos extends StatelessWidget {
               ),
               Image(
                 image: AssetImage(assetimage),
-                height: 80.0,
-                width: 80.0,
+                height: 20.0,
+                width: 20.0,
               ),
             ],
           ),

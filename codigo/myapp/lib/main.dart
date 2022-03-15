@@ -17,6 +17,6 @@ void main() {
     defaultTransition: Transition.rightToLeftWithFade,
     getPages: AppPages.pages,
     home: Home(),
-    initialBinding: PageBinding(),
+    initialBinding: ProductoBinding(),
   ));
 }

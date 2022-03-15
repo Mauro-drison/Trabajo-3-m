@@ -11,18 +11,22 @@ class AppArriba extends StatelessWidget {
         //produce un acomodamiento o alineacion ejemplo:*----*---*
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Icon(Icons.location_on),
-              //medida
-              SizedBox(
-                width: 3.0,
-              ),
-              Text(
-                "En esta parte ira la ubicacion",
-                style: TextStyle(fontSize: 18),
-              ),
-            ],
+          Expanded(
+            child: Row(
+              children: [
+                Icon(Icons.location_on),
+                //medida
+                SizedBox(
+                  width: 3.0,
+                ),
+                Expanded(
+                  child: Text(
+                    "En esta parte ira la ubicacion",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
           Container(
             //alto
@@ -34,7 +38,11 @@ class AppArriba extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.0),
                 //color
                 border: Border.all(color: Colors.grey, width: 2.0)),
-            child: Icon(Icons.phone_iphone),
+            child: Expanded(
+                child: Icon(
+              Icons.phone_iphone,
+              color: Colors.white,
+            )),
           )
         ],
       ),

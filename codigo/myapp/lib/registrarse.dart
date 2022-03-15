@@ -53,13 +53,13 @@ class Registro extends State<Registrarse> {
               children: [],
             ),
             Row(
-              children: [Text("data")],
+              children: [Text("---------------")],
             ),
             Row(
-              children: [Text("data")],
+              children: [Text("----------------")],
             ),
             Row(
-              children: [Text("data")],
+              children: [Text("----------------")],
             )
           ],
         )),

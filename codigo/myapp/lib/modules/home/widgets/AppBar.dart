@@ -15,11 +15,12 @@ class Barra_izquierda extends StatelessWidget {
       children: [
         DrawerHeader(
           decoration: BoxDecoration(
-            color: Colors.cyan,
+            color: Color.fromRGBO(24, 24, 24, 1),
           ),
           child: Column(
             children: [
               IconButton(
+                color: Colors.white,
                 icon: Icon(
                   Icons.account_circle_rounded,
                 ),
@@ -34,11 +35,11 @@ class Barra_izquierda extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.add_shopping_cart_outlined),
           title: const Text(
-            'MIS COMPRAS',
+            'MIS COMPRAS EN PROCESO',
             style: TextStyle(),
           ),
           onTap: () {
-            Get.toNamed(AppRoutes.CARRITO_COMPRAS);
+            Get.toNamed(AppRoutes.COMPRAS_TIEMPO);
           },
         ),
         ListTile(
@@ -47,6 +48,20 @@ class Barra_izquierda extends StatelessWidget {
           onTap: () {
             // Update the state of the app.
             // ...
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.add),
+          title: const Text('AGREGAR PRODUCTOS'),
+          onTap: () {
+            Get.toNamed(AppRoutes.AGREGAR_PRODUCTOS);
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.edit),
+          title: const Text('EDITAR PRODUCTOS'),
+          onTap: () {
+            Get.toNamed(AppRoutes.LISTA_MODIFICAR);
           },
         ),
       ],
