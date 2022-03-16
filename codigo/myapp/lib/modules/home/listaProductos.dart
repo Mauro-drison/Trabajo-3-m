@@ -18,7 +18,7 @@ class ListaProductos extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           // Toggle light when tapped.
-          print("perro");
+          print("precion");
         },
         child: Container(
           height: 170.0,
@@ -40,7 +40,7 @@ class ListaProductos extends StatelessWidget {
                 height: 5.0,
               ),
               Text(
-                "$no restaurantes",
+                "$no productos",
                 style: TextStyle(color: Colors.grey),
               ),
               SizedBox(

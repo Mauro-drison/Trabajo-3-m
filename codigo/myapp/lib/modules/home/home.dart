@@ -95,7 +95,6 @@ class Home extends GetView<ProductosController> {
               physics: ClampingScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                print("$index index del objeto");
                 return Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
